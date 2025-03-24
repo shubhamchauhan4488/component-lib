@@ -1,17 +1,39 @@
 {
-  "name": "component-lib",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@shubham_chauhan/component-lib",
+  "version": "1.1.5",
   "type": "module",
+  "main": "dist/component-lib.es.js",
+  "module": "dist/component-lib.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./components": {
+      "import": "./dist/components/index.js"
+    },
+    "./components/Accordion": {
+      "import": "./dist/Accordion/index.js"
+    },
+    "./components/ExpandablePanel": {
+      "import": "./dist/ExpandablePanel/index.js"
+    },
+    "./components/Icon": {
+      "import": "./dist/Icon/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -p tsconfig.build.json && BUILD_LIBRARY=true vite build",
+    "build-client": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build --output-dir src/lib/src/storybook-static"
   },
   "dependencies": {
+    "@shubham_chauhan/component-lib": "^1.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -27,7 +49,8 @@
     "@storybook/react": "^8.6.8",
     "@storybook/react-vite": "^8.6.8",
     "@storybook/test": "^8.6.8",
-    "@types/react": "^19.0.10",
+    "@types/node": "^22.13.11",
+    "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitest/browser": "^3.0.9",
@@ -44,6 +67,7 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0",
+    "vite-plugin-lib-inject-css": "^2.2.1",
     "vitest": "^3.0.9"
   },
   "eslintConfig": {
