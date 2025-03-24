@@ -23,8 +23,8 @@ const BodyWrapper = styled.div<{ isExpanded: boolean; variant?: EXPANDABLE_PANEL
     variant === EXPANDABLE_PANEL_VARIANT.PRIMARY
       ? theme.body.primaryText
       : theme.body.secondaryText};
-  border-radius: 4px;
 `;
+
 export const Body: React.FC<BodyProps> = ({
   id,
   content,
