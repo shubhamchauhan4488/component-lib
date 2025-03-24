@@ -27,12 +27,9 @@ const items: AccordionItem[] = [
 ];
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Compounds/Accordion',
+  title: 'Organisms/Accordion',
   component: Accordion,
-  parameters: {
-    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
-    layout: 'fullscreen',
-  },
+
   decorators: [
     (Story) => (
       <ThemeProvider theme={lightTheme}>

@@ -7,12 +7,6 @@ import { AccordionProps } from './docs/Accordion.types';
 
 const AccordionWrapper = styled.div<{ theme?: DefaultTheme }>`
   width: 100%;
-  ${({ theme }) =>
-    theme &&
-    css`
-      background: ${theme.accordionBackground || 'transparent'};
-      color: ${theme.accordionColor || 'inherit'};
-    `}
 `;
 
 const useAccordionKeyboardNavigation = () => {
