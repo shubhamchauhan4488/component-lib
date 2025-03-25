@@ -10,14 +10,39 @@ export default defineConfig(() => {
   return {
     plugins: [react(), libInjectCss()],
     test: {
-      environment: 'jsdom',
       globals: true,
-      setupFiles: './src/test/setup.ts',
+      environment: 'jsdom',
+      setupFiles: ['./src/test/setup.ts'],
+      include: ['src/**/*.{test,spec}.{js,ts,jsx,tsx}'],
+      exclude: [
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/storybook-static/**',
+        'src/stories/**',
+        'src/test/**',
+      ],
+      coverage: {
+        provider: 'v8',
+        enabled: true,
+        include: ['src/**/*'],
+        exclude: [
+          '**/node_modules/**',
+          '**/dist/**',
+          '**/storybook-static/**',
+          'src/stories/**',
+          'src/test/**',
+          'src/index.ts',
+          'src/**/*types.ts',
+          'src/**/*.d.ts',
+        ],
+        reporter: ['text', 'json', 'html'],
+      },
     },
     build: {
       // sourcemap: true,
       lib: {
         entry: {
+          main: resolve(__dirname, 'src/index.ts'),
           components: resolve(__dirname, 'src/components/index.ts'),
           Accordion: resolve(__dirname, 'src/components/organisms/Accordion/src/index.tsx'),
           ExpandablePanel: resolve(__dirname, 'src/components/molecules/ExpandablePanel/src/index.tsx'),
