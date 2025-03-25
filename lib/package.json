@@ -1,11 +1,14 @@
 {
   "name": "@shubham_chauhan/component-lib",
-  "version": "1.1.5",
+  "version": "1.1.9",
   "type": "module",
   "main": "dist/component-lib.es.js",
   "module": "dist/component-lib.es.js",
   "types": "dist/index.d.ts",
   "exports": {
+    ".": {
+      "import": "./dist/component-lib.es.js"
+    },
     "./components": {
       "import": "./dist/components/index.js"
     },
