@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { EXPANDABLE_PANEL_VARIANT } from '../constants';
 import { BodyProps } from '../../docs/ExpandablePanel.types';
-import {defaultTheme} from '../../../../../theme'; // Import default theme
+import {defaultTheme} from '../../../../../theme';
 
 const BodyWrapper = styled.div<{ isExpanded: boolean; variant?: EXPANDABLE_PANEL_VARIANT }>`
   line-height: 1.5em;
@@ -32,15 +32,14 @@ export const Body: React.FC<BodyProps> = ({
   variant = EXPANDABLE_PANEL_VARIANT.PRIMARY,
   isExpanded,
   ariaLabelledBy,
-  // bodyWrapperSc,
 }) => (
   <BodyWrapper
     role="region"
-    // style={bodyWrapperSc}
     isExpanded={isExpanded}
     id={id}
     aria-labelledby={ariaLabelledBy}
     variant={variant}
+    tabIndex={0}
   >
     {content}
   </BodyWrapper>

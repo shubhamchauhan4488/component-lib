@@ -34,12 +34,8 @@ export const ExpandablePanel: React.FC<ExpandablePanelProps> = ({
   isExpanded,
   onToggle,
   // customStyle = {},
-  ExpandIcon = () => (
-    <Icon name="plus" strokeColor={brandingColors.coral} />
-  ),
-  CollapseIcon = () => (
-    <Icon name="minus" strokeColor={brandingColors.coral} />
-  ),
+  ExpandIcon,
+  CollapseIcon,
   expandedByDefault = false,
   ariaLabel,
   ...rest

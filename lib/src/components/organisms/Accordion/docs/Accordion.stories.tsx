@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Accordion } from '../src';
 import { EXPANDABLE_PANEL_VARIANT } from '../../../molecules/ExpandablePanel/src/constants';
-import { ThemeProvider } from 'styled-components';
 import { brandingColors } from '../../../../colors';
 import {Icon} from '../../../atoms/Icon/src';
-import { lightTheme } from '../../../../theme';
 import { AccordionItem } from './Accordion.types';
 
 const items: AccordionItem[] = [
@@ -28,14 +26,6 @@ const items: AccordionItem[] = [
 const meta: Meta<typeof Accordion> = {
   title: 'Organisms/Accordion',
   component: Accordion,
-
-  decorators: [
-    (Story) => (
-      <ThemeProvider theme={lightTheme}>
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
   argTypes: {
     panelVariant: {
       control: 'radio',
