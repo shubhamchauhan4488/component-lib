@@ -62,7 +62,7 @@ function App() {
         backgroundColor: theme.colors.background
       }}
     >
-      <h1 style={{ color: theme.colors.textPrimary }}>Components</h1>
+      <h1 style={{ color: theme.colors.textPrimary }}>Components: A visual craft!</h1>
 
       <ThemedButton onClick={toggleTheme} theme={theme}>
         {themeName === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}

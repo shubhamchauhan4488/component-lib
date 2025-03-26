@@ -31,13 +31,11 @@ We've embraced the **Atomic Design Principle** - it's not just a methodology, it
     <img src='assets/README/1742926312172.png' width='40' height='40'/>
     <img src='assets/README/1742926540691.png' width='40' height='40'/>
     <img src='assets/README/1742926329807.png'  width='40' height='40'/>
-
 * **Molecules** (groupings of atoms)
 
   * Expandable content sections that provide interactive visibility control with various styling options and custom icons.
     ![1742926165228](assets/README/1742926165228.png)
     ![1742926207605](assets/README/1742926207605.png)
-
 * **Organisms** (The Ultimate Team-up)
 
   * Grouped Expandable Panels that provide advanced keyboard navigation, accessibility features, and customizable expand/collapse behaviors.
@@ -76,32 +74,44 @@ npm install
 
 # Magic Commands at your disposal
 
+## Build Storybook static files
+
+```bash
+npm run build-storybook
+```
+
 ## Run Storybook
+
 ```bash
 npm run storybook
 ```
 
-## Build Storybook static files
-```bash
-npm run build-storybook
-```
 ## Build the component library
+
 ```bash
 npm run build
 ```
+
 ## Run tests
+
 ```bash
 npm run test
 ```
+
 ## Run tests in watch mode
+
 ```bash
 npm run test:watch
 ```
+
 ## Run tests with coverage
+
 ```bash
 npm run test:coverage
 ```
+
 ## Preview built components
+
 ```bash
 npm run preview
 ```
@@ -109,7 +119,6 @@ npm run preview
 ## 📦 Add Some Spice to Your Project!
 
 Install our delightful package:
-
 
 ```bash
 npm install @shubham_chauhan/component-lib
@@ -152,4 +161,5 @@ const MyComponent = () => (
 ```
 
 ## 📖 For more inspiration
+
 Visit our Storybook playground 👉 [Storybook Wonderland](https://67e03155d6ee9e0a477dad36-lmywntygig.chromatic.com/) for interactive examples that will make you say "Wow, I need this in my project!"
