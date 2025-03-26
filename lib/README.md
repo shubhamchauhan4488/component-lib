@@ -27,20 +27,20 @@ We've embraced the **Atomic Design Principle** - it's not just a methodology, it
 
   * Funky SVG icons that bring personality to UI!
 
-    <img src='assets/README/1742896907397.png' width='40' height='40'/>
-    <img src='assets/README/1742926312172.png' width='40' height='40'/>
-    <img src='assets/README/1742926540691.png' width='40' height='40'/>
-    <img src='assets/README/1742926329807.png'  width='40' height='40'/>
+    <img src='src/assets/README/1742896907397.png' width='40' height='40'/>
+    <img src='src/assets/README/1742926312172.png' width='40' height='40'/>
+    <img src='src/assets/README/1742926540691.png' width='40' height='40'/>
+    <img src='src/assets/README/1742926329807.png'  width='40' height='40'/>
 * **Molecules** (groupings of atoms)
 
   * Expandable content sections that provide interactive visibility control with various styling options and custom icons.
-    ![1742926165228](assets/README/1742926165228.png)
-    ![1742926207605](assets/README/1742926207605.png)
+    ![1742926165228](src/assets/README/1742926165228.png)
+    ![1742926207605](src/assets/README/1742926207605.png)
 * **Organisms** (The Ultimate Team-up)
 
   * Grouped Expandable Panels that provide advanced keyboard navigation, accessibility features, and customizable expand/collapse behaviors.
-    ![1742926664979](assets/README/1742926664979.png)
-    ![1742926694478](assets/README/1742926694478.png)
+    ![1742926664979](src/assets/README/1742926664979.png)
+    ![1742926694478](src/assets/README/1742926694478.png)
 
 ## 🌈 Storybook - Where Components Come to Party!
 
@@ -48,12 +48,12 @@ Dive into our interactive Storybook wonderland:
 
 👉 [Explore the Storybook Universe](https://67e03155d6ee9e0a477dad36-lmywntygig.chromatic.com/)
 
-![1742924435563](assets/README/1742924435563.png)
+![1742924435563](src/assets/README/1742924435563.png)
 
 ### Plot twist: We have themes!
 
 Don't forget to toggle between themes
-![1742924221907](assets/README/1742924221907.png)
+![1742924221907](src/assets/README/1742924221907.png)
 
 ## 🚀 Getting Started in 3... 2... 1...
 
