@@ -68,7 +68,7 @@ Clone, navigate, dominate:
 
 ```bash
 git clone https://github.com/shubhamchauhan4488/component-lib.git
-cd component-lib
+cd component-lib/lib
 npm install
 ```
 
