@@ -1,6 +1,6 @@
 {
   "name": "@shubham_chauhan/component-lib",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "type": "module",
   "main": "dist/component-lib.es.js",
   "module": "dist/component-lib.es.js",
@@ -29,7 +29,6 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --output-dir src/lib/src/storybook-static",
     "test": "vitest",

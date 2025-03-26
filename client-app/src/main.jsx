@@ -1,14 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App'
-import { ThemeProvider } from './AppContext'
-import { lightTheme } from './../../lib/src/theme';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App';
+import { AppThemeProvider } from './AppContext';
+import { lightTheme } from '@shubham_chauhan/component-lib';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ThemeProvider initialTheme={lightTheme}>
+    <AppThemeProvider initialTheme="light">
       <App />
-    </ThemeProvider>
-  </StrictMode>,
-)
+    </AppThemeProvider>
+  </StrictMode>
+);
