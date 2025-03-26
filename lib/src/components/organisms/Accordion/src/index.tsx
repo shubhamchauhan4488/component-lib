@@ -1,13 +1,18 @@
 import React, { useState, useRef, useMemo, useCallback } from 'react';
-import styled, { DefaultTheme } from 'styled-components';
+import styled from 'styled-components';
 import {ExpandablePanel} from '../../../molecules/ExpandablePanel/src';
 import { EXPANDABLE_PANEL_VARIANT } from '../../../molecules/ExpandablePanel/src/constants';
 import { uniqueId } from '../../../../utils';
 import { AccordionProps } from './../docs/Accordion.types';
+import { defaultTheme } from '../../../../theme';
 
-const AccordionWrapper = styled.div<{ theme?: DefaultTheme }>`
+const AccordionWrapper = styled.div`
   width: 100%;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
+AccordionWrapper.defaultProps = {
+  theme: defaultTheme,
+};
 
 const useAccordionKeyboardNavigation = () => {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -2,29 +2,45 @@ import React from 'react';
 import styled from 'styled-components';
 import { EXPANDABLE_PANEL_VARIANT } from '../constants';
 import { BodyProps } from '../../docs/ExpandablePanel.types';
-import {defaultTheme} from '../../../../../theme';
+import { defaultTheme } from '../../../../../theme';
 
 const BodyWrapper = styled.div<{ isExpanded: boolean; variant?: EXPANDABLE_PANEL_VARIANT }>`
-  line-height: 1.5em;
+  line-height: ${({ theme }) => theme.typography.lineHeights.md};
   transition: max-height 0.3s, opacity 0.3s;
   overflow: auto;
   max-height: ${({ isExpanded }) => (isExpanded ? '500px' : '0')};
   opacity: ${({ isExpanded }) => (isExpanded ? 1 : 0)};
   display: block;
-  font-weight: 300;
-  padding: ${({ isExpanded, variant }) =>
-    isExpanded
-      ? variant === EXPANDABLE_PANEL_VARIANT.PRIMARY ? '16px 24px' : '12px 20px'
-      : '0 20px'};
+  font-weight: ${({ theme }) => theme.typography.fontWeights.light};
+  
+  padding: ${({ isExpanded, variant, theme }) => {
+    if (!isExpanded) return `0 ${theme.spacing.lg}`;
+
+    if (variant === EXPANDABLE_PANEL_VARIANT.PRIMARY) {
+      return `${theme.spacing.md} ${theme.spacing.lg}`;
+    }
+    return `${theme.spacing.sm} ${theme.spacing.md}`;
+  }};
+  
   background-color: ${({ theme, variant }) =>
     variant === EXPANDABLE_PANEL_VARIANT.PRIMARY
-      ? theme?.body?.primaryBg || defaultTheme.header.primaryBg
-      : theme?.body?.secondaryBg || defaultTheme.header.secondaryBg};
+      ? theme.colors.background
+      : theme.colors.background};
+      
   color: ${({ theme, variant }) =>
     variant === EXPANDABLE_PANEL_VARIANT.PRIMARY
-      ? theme?.body?.primaryText || defaultTheme.header.primaryText
-      : theme?.body?.secondaryText || defaultTheme.header.secondaryText};
+      ? theme.colors.textPrimary
+      : theme.colors.secondaryDark};
+
+  border: 1px solid ${({ theme, variant }) =>
+    variant === EXPANDABLE_PANEL_VARIANT.PRIMARY
+      ? theme.colors.textPrimary
+      : theme.colors.secondaryDark};
 `;
+
+BodyWrapper.defaultProps = {
+  theme: defaultTheme,
+};
 
 export const Body: React.FC<BodyProps> = ({
   id,

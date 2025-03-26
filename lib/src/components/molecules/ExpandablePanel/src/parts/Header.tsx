@@ -13,31 +13,28 @@ const variantStyles = {
     wrapper: css`
       flex-direction: row;
       justify-content: flex-start;
-      font-family: ${typography.fontFamilySansDemibold};
-      background-color: ${({ theme }) => theme?.header?.primaryBg || defaultTheme?.header?.primaryBg};
-      color: ${({ theme }) => theme?.header?.primaryText || defaultTheme?.header?.primaryText};
+      font-family: ${({ theme }) => theme.typography.fontFamilies.heading};
+      background-color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.textPrimary};
     `,
     title: css`
-      font-family: ${typography.fontFamilySansDemibold};
-      color: ${({ theme }) => theme?.header?.primaryText || defaultTheme?.header?.primaryText};
+      font-family: ${({ theme }) => theme.typography.fontFamilies.heading};
+      color: ${({ theme }) => theme.colors.textInverse};
     `,
-    expandIcon: <Icon name="plus" strokeColor={brandingColors.light_2_green} />,
-    collapseIcon: <Icon name="minus" strokeColor={brandingColors.light_2_green} />
   },
   [EXPANDABLE_PANEL_VARIANT.SECONDARY]: {
     wrapper: css`
       flex-direction: row-reverse;
       justify-content: space-between;
-      font-family: ${typography.fontFamilySansLight};
-      background-color: ${({ theme }) => theme?.header?.secondaryBg || defaultTheme?.header?.secondaryBg};
-      color: ${({ theme }) => theme?.header?.secondaryText || defaultTheme?.header?.secondaryText};
+      font-family: ${({ theme }) => theme.typography.fontFamilies.base};
+      background-color: ${({ theme }) => theme.colors.secondaryLight};
+      border: ${({ theme }) =>
+        `${theme.borders.width.thin} ${theme.borders.style.solid} ${theme.colors.secondaryDark}`};
     `,
     title: css`
-      font-family: ${typography.fontFamilySansLight};
-      color: ${({ theme }) => theme?.header?.secondaryText || defaultTheme?.header?.secondaryText};
+      font-family: ${({ theme }) => theme.typography.fontFamilies.base};
+      color: ${({ theme }) => theme.colors.textInverse};
     `,
-    expandIcon: <Icon name="plus_withcircle" size={24} fill={brandingColors.white} strokeColor={brandingColors.coral} />,
-    collapseIcon: <Icon name="minus_withcircle" fill={brandingColors.white} strokeColor={brandingColors.coral} />
   }
 };
 
@@ -45,19 +42,28 @@ const HeaderWrapper = styled.div<HeaderProps>`
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  border-bottom: 1px solid ${({ theme }) => theme?.header?.border || defaultTheme?.header?.border};
+  padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.md}`};
+  border-bottom: ${({ theme }) =>
+    `${theme.borders.width.thin} ${theme.borders.style.solid} ${theme.colors.border}`};
   ${({ variant = EXPANDABLE_PANEL_VARIANT.PRIMARY }) => variantStyles[variant].wrapper}
 `;
 
 const HeaderTitle = styled.span<{ variant?: EXPANDABLE_PANEL_VARIANT }>`
   display: inline-block;
-  font-size: 18px;
+  font-size: ${({ theme }) => theme.typography.fontSizes.lg};
   ${({ variant = EXPANDABLE_PANEL_VARIANT.PRIMARY }) => variantStyles[variant].title}
 `;
 
+HeaderWrapper.defaultProps = {
+  theme: defaultTheme,
+};
+
+HeaderTitle.defaultProps = {
+  theme: defaultTheme,
+};
+
 const IconWrapper = styled.div`
-  margin-right: 12px;
+  margin-right: ${({ theme }) => theme.spacing.sm};
 `;
 
 const getIcon = (
@@ -71,14 +77,16 @@ const getIcon = (
       return ExpandIcon ? <ExpandIcon /> : (
         <Icon
           name="plus"
-          strokeColor={brandingColors.light_2_green}
+          size={16}
+          strokeColor={brandingColors.light_1_dark_navy}
         />
       );
     } else {
       return CollapseIcon ? <CollapseIcon /> : (
         <Icon
           name="minus"
-          strokeColor={brandingColors.light_2_green}
+          size={16}
+          strokeColor={brandingColors.light_1_dark_navy}
         />
       );
     }
@@ -89,7 +97,7 @@ const getIcon = (
     return ExpandIcon ? <ExpandIcon /> : (
       <Icon
         name="plus_withcircle"
-        size={20}
+        size={16}
         fill={brandingColors.white}
         strokeColor={brandingColors.coral}
       />
@@ -98,7 +106,7 @@ const getIcon = (
     return CollapseIcon ? <CollapseIcon /> : (
       <Icon
         name="minus_withcircle"
-        size={20}
+        size={16}
         fill={brandingColors.white}
         strokeColor={brandingColors.coral}
       />

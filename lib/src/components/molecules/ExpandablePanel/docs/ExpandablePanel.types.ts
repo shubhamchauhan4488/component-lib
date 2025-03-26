@@ -13,7 +13,6 @@ export interface HeaderProps {
   title: string;
   expandItem: () => void;
   isExpanded: boolean;
-  headerTitleSc?: React.CSSProperties;
   headerWrapperSc?: React.CSSProperties;
   variant?: EXPANDABLE_PANEL_VARIANT;
   ExpandIcon?: React.FC;

@@ -58,19 +58,3 @@ export const CustomIcons = {
     CollapseIcon: () => <span>👆</span>,
   },
 };
-
-// export const CustomStyles = {
-//   args: {
-//     id: 'custom-styles-panel',
-//     title: 'Panel with Custom Styles',
-//     children: <p>This panel applies custom styles.</p>,
-//     variant: EXPANDABLE_PANEL_VARIANT.PRIMARY,
-//     expandedByDefault: false,
-//     // customStyle: {
-//     //   wrapperStyleSc: { backgroundColor: 'lightblue', border: '2px dashed blue' },
-//     //   headerTitleSc: { color: 'darkblue', fontSize: '20px' },
-//     //   headerWrapperSc: { padding: '10px' },
-//     //   bodyWrapperSc: { padding: '20px', fontStyle: 'italic' },
-//     // },
-//   },
-// };

@@ -14,12 +14,12 @@ export const Icon: React.FC<IconProps> = ({
           <svg
             width={size}
             height={size}
-            viewBox="0 0 12 12"
+            viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
             data-testid="icon-plus"
           >
-            <line x1="6" y1="2" x2="6" y2="10" stroke={strokeColor} strokeWidth="2" />
-            <line x1="2" y1="6" x2="10" y2="6" stroke={strokeColor} strokeWidth="2" />
+            <line x1="8" y1="2" x2="8" y2="16" stroke={strokeColor} strokeWidth="2" />
+            <line x1="2" y1="9" x2="14" y2="9" stroke={strokeColor} strokeWidth="2" />
           </svg>
         );
       case 'minus':
@@ -27,11 +27,11 @@ export const Icon: React.FC<IconProps> = ({
           <svg
             width={size}
             height={size}
-            viewBox="0 0 12 12"
+            viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
             data-testid="icon-minus"
           >
-            <line x1="2" y1="6" x2="10" y2="6" stroke={strokeColor} strokeWidth="2" />
+            <line x1="2" y1="9" x2="14" y2="9" stroke={strokeColor} strokeWidth="2" />
           </svg>
         );
       case 'plus_withcircle':
